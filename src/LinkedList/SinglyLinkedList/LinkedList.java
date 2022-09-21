@@ -1,4 +1,4 @@
-package SinglyLinkedList;
+package LinkedList.SinglyLinkedList;
 
 public class LinkedList {
     private int length;
