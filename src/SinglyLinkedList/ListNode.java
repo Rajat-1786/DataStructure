@@ -19,6 +19,7 @@ public class ListNode {
 
     public ListNode getNext() {
         return next;
+
     }
 
     public void setNext(ListNode node) {
