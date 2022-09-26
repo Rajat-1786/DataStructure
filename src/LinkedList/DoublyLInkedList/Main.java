@@ -11,6 +11,10 @@ public class Main {
         list.insertAtBegin(new ListNode("Hemu"));
         list.insertAtPos(new ListNode("Jhatua"), 2);
         System.out.println(list);
+//        System.out.println(list.removeAtBegin());
+//        System.out.println(list.removeAtEnd());
+        System.out.println(list.removeMatched("Rahul"));
+        System.out.println(list);
 
     }
 }

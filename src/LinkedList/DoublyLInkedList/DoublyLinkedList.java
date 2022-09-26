@@ -74,20 +74,82 @@ public class DoublyLinkedList {
 
     //Remove Element from starting
     public String removeAtBegin(){
-
-        return null;
+        String result ;
+        if(head==null){
+            result = "List is Empty";
+        }
+        else{
+            ListNode temp = head;
+            head = head.getNext();
+            temp.setNext(null);
+            head.setPrev(null);
+            result = temp.getName();
+            temp=null;
+        }
+        return result;
     }
 
     //Remove Element from End
     public String removeAtEnd(){
-
-        return null;
+        String result ;
+        if(head==null){
+            result = "List is Empty";
+        }
+        else{
+            ListNode temp = head;
+            while(temp.getNext()!=null){
+                temp=temp.getNext();
+            }
+            temp.getPrev().setNext(null);
+            temp.setPrev(null);
+            result = temp.getName();
+            temp=null;
+        }
+        return result;
     }
 
     //remove Matched Element
     public String removeMatched(String tobeMatch){
+        String result = "";
+        if(head==null){
+            result = "List is Empty";
+        }
+        else {
+            ListNode temp = head.getNext();
+            if (head.getName().equals(tobeMatch)) {
+                result = head.getName();
+                temp = head;
+                head = head.getNext();
+                head.setPrev(null);
+                temp.setNext(null);
+                temp = null;
+            } else {
+                ListNode prev = head;
+                while (temp != null) {
+                    if (temp.getName().equals(tobeMatch)) {
+                        if(temp.getNext()==null){
+                            temp.getPrev().setNext(null);
+                            temp.setPrev(null);
+                            result = temp.getName();
+                            temp=null;
 
-        return null;
+                        }
+                        else {
+                            prev = temp.getPrev();
+                            prev.setNext(temp.getNext());
+                            temp.getNext().setPrev(prev);
+                            result = temp.getName();
+                            temp = null;
+                            prev = null;
+
+                        }
+                        break;
+                    }
+                    temp = temp.getNext();
+                }
+            }
+        }
+        return result;
     }
 
     //Clear List
