@@ -4,7 +4,8 @@ public class CLLNode {
     private String name;
     private CLLNode next;
 
-    public CLLNode() {
+    public CLLNode(String name) {
+        this.name = name;
         this.next = null;
     }
 
