@@ -45,18 +45,12 @@ public class QueueLLImpl {
     }
 
     public String toString(){
-        String str = "[";
-        int i=1;
+        String str = "";
         QueueLL temp=front;
-        while(temp!=rear){
-            str = str  + Integer.valueOf(temp.getData());
+        while(temp!=null) {
+            str = str + Integer.valueOf(temp.getData())+"\t";
             temp = temp.getNext();
-            if(i<length-1) {
-                str += ", ";
-            }
-            i++;
         }
-        str = str +"]";
         return str;
     }
 }
