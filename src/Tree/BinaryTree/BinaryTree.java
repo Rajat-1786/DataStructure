@@ -95,8 +95,8 @@ public class BinaryTree {
     //recursion PostOrderTraversal
     public void recPostOrderTraversal(BinaryTreeNode root){
         if(root!=null){
-            recPostOrderTraversal(root.getRight());
             recPostOrderTraversal(root.getLeft());
+            recPostOrderTraversal(root.getRight());
             System.out.println(root.getData());
         }
     }
@@ -128,6 +128,7 @@ public class BinaryTree {
             }
             else{
                     res.add(cur.getData());
+                    s.pop();
             }
 
             prev = cur;
@@ -136,32 +137,37 @@ public class BinaryTree {
     }
 
     //LevelOrder traversal
-    public ArrayList<ArrayList<Integer>> levelOrderTraversal(BinaryTreeNode root){
+    public ArrayList<ArrayList<Integer>> levelOrderTraversal(BinaryTreeNode root) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        if(root==null)
+        if (root == null)
             return res;
         Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
         q.offer(root);
         q.offer(null);
         ArrayList<Integer> cur = new ArrayList<Integer>();
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             BinaryTreeNode tmp = q.poll();
-            if(tmp!=null){
+            if (tmp != null) {
                 cur.add(tmp.getData());
-                if(tmp.getLeft()!=null)
+                if (tmp.getLeft() != null)
                     q.offer(tmp.getLeft());
-                if(tmp.getRight()!=null)
+                if (tmp.getRight() != null)
                     q.offer(tmp.getRight());
-            }
-            else{
+            } else {
                 ArrayList<Integer> c_curr = new ArrayList<Integer>(cur);
                 res.add(c_curr);
                 cur.clear();
-                if(!q.isEmpty())
+                if (!q.isEmpty())
                     q.offer(null);
             }
         }
         return res;
     }
+
+    //To do finding the height of the tree
+
+    //Finding the size of the tree
+
+
 
 }
