@@ -9,11 +9,13 @@ public class Main {
         clist.addAtEnd(new CLLNode("Hari Kishan"));
         clist.addAtStart(new CLLNode("Ram Bhajan"));
         System.out.println(clist);
+        System.out.println(3%5);
 //        System.out.println(clist.removeAtEnd());
 //        System.out.println(clist.removeAtStart());
 //        System.out.println(clist.remove("Ram Bhajan"));
         System.out.println(clist.contains("Ram Kishan"));
         System.out.println(clist);
-
+        System.out.println(6/2);
+        System.out.println(7/2);
     }
 }
