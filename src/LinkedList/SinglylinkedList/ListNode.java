@@ -1,10 +1,10 @@
-package LinkedList.CircularLinkedList;
+package LinkedList.Prac.SinglylinkedList;
 
-public class CLLNode {
+public class ListNode {
     private int data;
-    CLLNode next;
+    ListNode next;
 
-    public CLLNode(int data){
+    public ListNode(int data){
         this.data = data;
         this.next = null;
     }
@@ -14,14 +14,14 @@ public class CLLNode {
     }
 
     public void setData(int data) {
-        this.data = data;
+        data = data;
     }
 
-    public CLLNode getNext() {
+    public ListNode getNext() {
         return next;
     }
 
-    public void setNext(CLLNode next) {
+    public void setNext(ListNode next) {
         this.next = next;
     }
 }
